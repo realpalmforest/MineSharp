@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/Workspace/Projects/Coding/MonoGame/FicusSimulator/FicusSimulator/Content/blocks.png</File>
+    <File>d:/Workspace/Projects/Coding/MonoGame/FicusSimulator/FicusSimulator/Content/blocks.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

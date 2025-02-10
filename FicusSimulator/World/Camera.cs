@@ -1,7 +1,7 @@
 ﻿using FicusSimulator.Core;
 using Microsoft.Xna.Framework;
 
-namespace FicusSimulator;
+namespace FicusSimulator.World;
 
 public class Camera
 {

@@ -34,3 +34,4 @@ D:\Workspace\Projects\Coding\MonoGame\FicusSimulator\MonoGame.ImGuiNet\obj\Debug
 D:\Workspace\Projects\Coding\MonoGame\FicusSimulator\MonoGame.ImGuiNet\obj\Debug\net8.0\refint\Monogame.ImGuiNet.dll
 D:\Workspace\Projects\Coding\MonoGame\FicusSimulator\MonoGame.ImGuiNet\obj\Debug\net8.0\Monogame.ImGuiNet.pdb
 D:\Workspace\Projects\Coding\MonoGame\FicusSimulator\MonoGame.ImGuiNet\obj\Debug\net8.0\ref\Monogame.ImGuiNet.dll
+D:\Workspace\Projects\Coding\MonoGame\FicusSimulator\MonoGame.ImGuiNet\obj\Debug\net8.0\Monogame.ImGuiNet.sourcelink.json

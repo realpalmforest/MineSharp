@@ -3,13 +3,13 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
 
-namespace FicusSimulator;
+namespace FicusSimulator.World;
 
 public class CameraController
 {
     public Camera Camera;
 
-    public float MoveSpeed = 10f;
+    public float MoveSpeed = 1f;
     public float Sensitivity = 25f;
 
     private bool mouseLocked = true;

@@ -1,4 +1,4 @@
-using FicusSimulator.Blocks;
+using FicusSimulator.World;
 using ImGuiNET;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,11 +11,10 @@ public static class GameManager
     private static double elapsedTime = 0;
     private static int fps = 0;
 
-
     private static Camera camera;
     private static CameraController controller;
 
-    public static World World;
+    public static GameWorld World;
 
     private static System.Numerics.Vector3 newBlockPos = System.Numerics.Vector3.Zero;
 
@@ -24,10 +23,10 @@ public static class GameManager
         camera = new Camera();
         controller = new CameraController(camera);
 
-        World = new World(camera);
+        World = new GameWorld(camera);
 
-
-        World.FillBlocks(BlockType.Grass, Vector3.Zero, new Vector3(20, 20, 20));
+        World.FillBlocks(Vector3.Zero, new Vector3(15, 31, 15), BlockType.Stone);
+        // World.SetBlockAt(new Vector3(0, 0, 0), new Block(BlockType.Grass));
     }
 
     public static void Update()
@@ -45,8 +44,6 @@ public static class GameManager
 
         controller.Update();
         camera.Update();
-
-        World.Update();
     }
 
     public static void Draw()
@@ -61,13 +58,18 @@ public static class GameManager
 
     public static void DrawImGui()
     {
-        ImGui.Begin("Options", ImGuiWindowFlags.None);
+        ImGui.Begin("Info", ImGuiWindowFlags.NoMove);
 
         ImGui.Text($"FPS: {fps}");
-        ImGui.Checkbox("Wireframes", ref World.ShowWireFrames);
+
         ImGui.Separator();
 
-        if (ImGui.CollapsingHeader("Camera"))
+        if (ImGui.CollapsingHeader("Renderer", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Checkbox("Wireframes", ref World.ShowWireFrames);
+        }
+
+        if (ImGui.CollapsingHeader("Camera", ImGuiTreeNodeFlags.DefaultOpen))
         {
             System.Numerics.Vector3 cameraPosNumerics = camera.Position.ToNumerics();
             ImGui.InputFloat3("Position", ref cameraPosNumerics);
@@ -81,15 +83,21 @@ public static class GameManager
             ImGui.DragFloat("Sensitivity", ref controller.Sensitivity);
         }
 
-        if (ImGui.CollapsingHeader("World"))
+        ImGui.Separator();
+
+        if (ImGui.CollapsingHeader("World", ImGuiTreeNodeFlags.DefaultOpen))
         {
-            ImGui.Text("Block Count: " + World.Blocks.Count);
+            ImGui.Text("Chunk Count: " + World.Chunks.Count);
+            ImGui.Text("Rendered Chunks: " + World.RenderedChunks);
+
+            Vector2 chunkPos = World.GetPositionOfChunk(camera.Position);
+            ImGui.Text("Current Chunk: " + (World.Chunks.ContainsKey(chunkPos) ? chunkPos : "None"));
             ImGui.Separator();
 
-            ImGui.InputFloat3("Block Position", ref newBlockPos);
+            ImGui.InputFloat3("Position", ref newBlockPos);
             if (ImGui.Button("Create Block"))
             {
-                World.CreateBlock(new Block(), newBlockPos);
+                World.SetBlockAt(newBlockPos, new Block(BlockType.Grass));
                 newBlockPos = System.Numerics.Vector3.Zero;
             }
 
@@ -97,9 +105,24 @@ public static class GameManager
 
             if (ImGui.Button("Destroy Block"))
             {
-                World.DestroyBlock(newBlockPos);
+                World.SetBlockAt(newBlockPos, new Block(BlockType.Air));
                 newBlockPos = System.Numerics.Vector3.Zero;
             }
+
+
+            ImGui.Separator();
+            if (ImGui.CollapsingHeader("Blocks"))
+            {
+                foreach (var block in World.GetAllBlocks())
+                {
+                    ImGui.Text(block.Position + " | " + block.Type);
+                }
+            }
+        }
+
+        if (ImGui.CollapsingHeader("Controls", ImGuiTreeNodeFlags.DefaultOpen))
+        {
+            ImGui.Text("Toggle Camera Mode: [Left Ctrl]");
         }
 
         ImGui.End();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj": {}
+    "d:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj": {}
   },
   "projects": {
-    "D:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj": {
+    "d:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "D:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj",
+        "projectUniqueName": "d:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj",
         "projectName": "MonoGame.ImGuiNet",
-        "projectPath": "D:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj",
+        "projectPath": "d:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj",
         "packagesPath": "C:\\Users\\realp\\.nuget\\packages\\",
-        "outputPath": "D:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\obj\\",
+        "outputPath": "d:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
