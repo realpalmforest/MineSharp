@@ -1,9 +1,9 @@
-﻿using FicusSimulator.Core;
+﻿using MineSharp.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System;
 
-namespace FicusSimulator.World;
+namespace MineSharp.World;
 
 public class CameraController
 {

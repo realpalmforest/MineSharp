@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace FicusSimulator.World
+namespace MineSharp.World
 {
     public struct Chunk
     {
@@ -29,13 +29,12 @@ namespace FicusSimulator.World
             return Blocks[(int)position.X, (int)position.Y, (int)position.Z];
         }
 
-        public void SetBlockAt(Vector3 position, Block block)
+        public void SetBlockAt(Vector3 position, BlockType blockType)
         {
             if (position.X < 0 || position.Y < 0 || position.Z < 0 || position.X > Width - 1 || position.Y > Height - 1 || position.Z > Depth - 1)
                 return;
 
-            block.Position = new Vector3(Position.X * Width, 0, Position.Y * Depth) + position;
-            Blocks[(int)position.X, (int)position.Y, (int)position.Z] = block;
+            Blocks[(int)position.X, (int)position.Y, (int)position.Z] = new Block(new Vector3(Position.X * Width, 0, Position.Y * Depth) + position, blockType);
 
             SetMesh(BlockRenderer.GenerateChunkMesh(this));
             World.TryGenerateNeighborChunks(this, position);

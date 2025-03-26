@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework.Input;
 
-namespace FicusSimulator.Core;
+namespace MineSharp.Core;
 
 public static class InputManager
 {

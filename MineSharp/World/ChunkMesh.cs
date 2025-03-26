@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
-namespace FicusSimulator.World;
+namespace MineSharp.World;
 
 public struct ChunkMesh
 {

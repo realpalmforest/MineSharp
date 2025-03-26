@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "tP5ovatIYOg=",
+  "dgSpecHash": "Yr5c6qiqOJ4GHZjLbpGlrHPW3zsCeR3CZ5pInTFMVdfKY+15r8yyz5UKZ8VJqDcIyQqdk2zTOOfDY0szWCdNFg==",
   "success": true,
-  "projectFilePath": "d:\\Workspace\\Projects\\Coding\\MonoGame\\FicusSimulator\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj",
+  "projectFilePath": "C:\\Users\\palm\\Workspace\\Code\\MonoGame\\MineSharp\\MonoGame.ImGuiNet\\Monogame.ImGuiNet.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\realp\\.nuget\\packages\\imgui.net\\1.90.1.1\\imgui.net.1.90.1.1.nupkg.sha512",
-    "C:\\Users\\realp\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
-    "C:\\Users\\realp\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
-    "C:\\Users\\realp\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
-    "C:\\Users\\realp\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
-    "C:\\Users\\realp\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+    "C:\\Users\\palm\\.nuget\\packages\\imgui.net\\1.90.1.1\\imgui.net.1.90.1.1.nupkg.sha512",
+    "C:\\Users\\palm\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\palm\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\palm\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\palm\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\palm\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
   ],
   "logs": []
 }

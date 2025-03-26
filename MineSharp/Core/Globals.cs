@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace FicusSimulator.Core;
+namespace MineSharp.Core;
 
 public static class Globals
 {

@@ -1,10 +1,10 @@
-using FicusSimulator.Core;
+using MineSharp.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 
-namespace FicusSimulator.World;
+namespace MineSharp.World;
 
 public static class BlockRenderer
 {
@@ -43,19 +43,18 @@ public static class BlockRenderer
         if (block.Type == BlockType.Air)
             return;
 
-        //Vector3 blockPos = chunk.World.ToChunkPosition(block.Position, out Vector2 chunkPos);
-
-        if (GameManager.World.GetBlockAt(block.Position - new Vector3(0, 0, 1)).Type == BlockType.Air)
+        // Create block faces if there is no block in that direction
+        if (chunk.World.GetBlockAt(block.Position - new Vector3(0, 0, 1)).Type == BlockType.Air)
             AddFaceVertices(block.Position, FaceDirection.Front, block.Type, (short)vertices.Count);
-        if (GameManager.World.GetBlockAt(block.Position + new Vector3(0, 0, 1)).Type == BlockType.Air)
+        if (chunk.World.GetBlockAt(block.Position + new Vector3(0, 0, 1)).Type == BlockType.Air)
             AddFaceVertices(block.Position, FaceDirection.Back, block.Type, (short)vertices.Count);
-        if (GameManager.World.GetBlockAt(block.Position - new Vector3(1, 0, 0)).Type == BlockType.Air)
+        if (chunk.World.GetBlockAt(block.Position - new Vector3(1, 0, 0)).Type == BlockType.Air)
             AddFaceVertices(block.Position, FaceDirection.Left, block.Type, (short)vertices.Count);
-        if (GameManager.World.GetBlockAt(block.Position + new Vector3(1, 0, 0)).Type == BlockType.Air)
+        if (chunk.World.GetBlockAt(block.Position + new Vector3(1, 0, 0)).Type == BlockType.Air)
             AddFaceVertices(block.Position, FaceDirection.Right, block.Type, (short)vertices.Count);
-        if (GameManager.World.GetBlockAt(block.Position + new Vector3(0, 1, 0)).Type == BlockType.Air)
+        if (chunk.World.GetBlockAt(block.Position + new Vector3(0, 1, 0)).Type == BlockType.Air)
             AddFaceVertices(block.Position, FaceDirection.Top, block.Type, (short)vertices.Count);
-        if (GameManager.World.GetBlockAt(block.Position - new Vector3(0, 1, 0)).Type == BlockType.Air)
+        if (chunk.World.GetBlockAt(block.Position - new Vector3(0, 1, 0)).Type == BlockType.Air)
             AddFaceVertices(block.Position, FaceDirection.Bottom, block.Type, (short)vertices.Count);
     }
 

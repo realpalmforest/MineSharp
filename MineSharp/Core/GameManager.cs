@@ -1,9 +1,9 @@
-using FicusSimulator.World;
+using MineSharp.World;
 using ImGuiNET;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace FicusSimulator.Core;
+namespace MineSharp.Core;
 
 public static class GameManager
 {
@@ -44,6 +44,8 @@ public static class GameManager
 
         controller.Update();
         camera.Update();
+
+        World.Update();
     }
 
     public static void Draw()
@@ -94,10 +96,10 @@ public static class GameManager
             ImGui.Text("Current Chunk: " + (World.Chunks.ContainsKey(chunkPos) ? chunkPos : "None"));
             ImGui.Separator();
 
-            ImGui.InputFloat3("Position", ref newBlockPos);
+            ImGui.InputFloat3("World Position", ref newBlockPos);
             if (ImGui.Button("Create Block"))
             {
-                World.SetBlockAt(newBlockPos, new Block(BlockType.Grass));
+                World.SetBlockAt(newBlockPos, BlockType.Grass);
                 newBlockPos = System.Numerics.Vector3.Zero;
             }
 
@@ -105,7 +107,7 @@ public static class GameManager
 
             if (ImGui.Button("Destroy Block"))
             {
-                World.SetBlockAt(newBlockPos, new Block(BlockType.Air));
+                World.SetBlockAt(newBlockPos, BlockType.Air);
                 newBlockPos = System.Numerics.Vector3.Zero;
             }
 

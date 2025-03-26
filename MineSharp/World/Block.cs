@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace FicusSimulator.World;
+namespace MineSharp.World;
 
 public enum BlockType
 {
@@ -25,8 +25,9 @@ public struct Block
     public Vector3 Position;
     public BlockType Type = BlockType.Air;
 
-    public Block(BlockType type)
+    public Block(Vector3 position, BlockType type)
     {
+        Position = position;
         Type = type;
     }
 

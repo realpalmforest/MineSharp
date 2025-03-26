@@ -1,10 +1,11 @@
-﻿using FicusSimulator.Core;
+﻿using MineSharp.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
-namespace FicusSimulator.World;
+namespace MineSharp.World;
 
 public class GameWorld
 {
@@ -21,6 +22,10 @@ public class GameWorld
         Camera = camera;
     }
 
+    public void Update()
+    {
+        foreach (var chunk in Chunks) { Debug.WriteLine(chunk.Key); }
+    }
 
     public void Draw()
     {
@@ -59,14 +64,14 @@ public class GameWorld
         return new Block();
     }
 
-    public void SetBlockAt(Vector3 position, Block block)
+    public void SetBlockAt(Vector3 position, BlockType blockType)
     {
         Vector3 blockPos = ToChunkPosition(position, out Vector2 chunkPosition);
 
         Chunks.TryAdd(chunkPosition, new Chunk(this, chunkPosition));
         Chunks.TryGetValue(chunkPosition, out Chunk chunk);
 
-        chunk.SetBlockAt(blockPos, block);
+        chunk.SetBlockAt(blockPos, blockType);
     }
 
     public void FillBlocks(Vector3 startPosition, Vector3 endPosition, BlockType type)
@@ -87,8 +92,7 @@ public class GameWorld
                     if(Chunks.GetValueOrDefault(chunkPos).IsEmpty)
                         Chunks.TryAdd(chunkPos, new Chunk(this, chunkPos));
 
-                    Block block = new Block(type);
-                    block.Position = new Vector3(x, y, z);
+                    Block block = new Block(new Vector3(x, y, z), type);
                     Chunks.GetValueOrDefault(chunkPos).Blocks[x, y, z] = block;
                 }
             }

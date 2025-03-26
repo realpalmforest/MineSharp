@@ -1,10 +1,10 @@
-﻿using FicusSimulator.Core;
+﻿using MineSharp.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.ImGuiNet;
 
-namespace FicusSimulator
+namespace MineSharp
 {
     public class Game1 : Game
     {

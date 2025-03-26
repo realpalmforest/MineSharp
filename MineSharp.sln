@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FicusSimulator", "FicusSimulator\FicusSimulator.csproj", "{8F8835DA-6D16-454A-80BF-15497B3C902D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MineSharp", "MineSharp\MineSharp.csproj", "{8F8835DA-6D16-454A-80BF-15497B3C902D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monogame.ImGuiNet", "MonoGame.ImGuiNet\Monogame.ImGuiNet.csproj", "{38620471-6D7F-493C-B83E-44A1513464F5}"
 EndProject
